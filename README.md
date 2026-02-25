@@ -11,7 +11,7 @@ The core of this project is a **Generative Adversarial Network (GAN)** designed 
 ## Data Utilized: K-NET
 We utilize strong-motion acceleration data from **K-NET (Kyoshin Network)**, a dense seismograph network in Japan.
 *   **Role**: This data serves as the **Ground Truth**.
-*   **Why it helps**: The Discriminator needs to know what a "Real Earthquake" looks like to grade the Generator. By feeding it high-quality, high-magnitude records (like the M5.7 event we integrated), we teach the model the physics of ground motion (P-waves, S-waves, decay). 
+*   **Why it helps**: The Discriminator needs to know what a "Real Earthquake" looks like to grade the Generator. By feeding it high-quality, high-magnitude records (like the M5.7 event we integrated), we teach the model the physics of ground motion (P-waves, S-waves, decay).
 *   **Integration**: We parse raw ASCII `.EW/NS/UD` files, slice them into 1024-point windows, and normalize them to train the model.
 
 ## Architecture
@@ -21,6 +21,20 @@ We utilize strong-motion acceleration data from **K-NET (Kyoshin Network)**, a d
 ## Prerequisites
 - Node.js (v18+)
 - Python (v3.8+)
+
+## How to Run
+
+You can now run the entire project with a single command from the root directory:
+
+### One-Command Setup
+1. Open a terminal in the project root.
+2. Run `npm run install:all` to install both backend and frontend dependencies.
+3. Run `npm run dev` (or double-click `run.bat`) to start both servers.
+
+### Alternative (Manual)
+If you prefer running them separately:
+- **Backend**: `cd backend && uvicorn app.main:app --reload`
+- **Frontend**: `cd frontend && npm run dev`
 
 ## Setup and Running
 

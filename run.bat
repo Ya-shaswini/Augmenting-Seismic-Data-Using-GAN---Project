@@ -1,0 +1,3 @@
+@echo off
+echo Starting Gan project (Backend and Frontend)...
+npm run dev
